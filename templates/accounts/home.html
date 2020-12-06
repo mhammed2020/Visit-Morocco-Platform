@@ -4,9 +4,10 @@
 
     {% block content %}
       {% load  static %}
-      {% for item in destinations  %}
         
     <div class="row tm-row">
+        {% for item in destinations  %}
+
         <article class="col-12 col-md-6 tm-post">
             <hr class="tm-hr-primary">
             <a href="post.html" class="effect-lily tm-post-link tm-pt-60">
@@ -29,9 +30,9 @@
                 <span>by Admin Nat</span>
             </div>
         </article>
-      
+        {% endfor %}
+
     </div>   
-    {% endfor %}
 
     {% endblock  %}
 
