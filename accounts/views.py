@@ -31,3 +31,16 @@ class DestinationCreateView(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+def post_detail(request,post_id) :
+    
+    post = get_object_or_404(Destination,pk=post_id)
+   
+    context ={
+        'title':post,
+        'post' : post,
+    }
+
+
+   
+    return render(request,'blog/post_detail.html', context)
