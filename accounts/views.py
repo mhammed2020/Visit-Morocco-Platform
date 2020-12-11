@@ -26,7 +26,7 @@ class DestinationListView(ListView):
 
 class DestinationCreateView(CreateView):
     model = Destination
-    fields = ['name', 'img','desc','price']
+    fields = ['name','desc','price',]
 
     def form_valid(self, form):
         form.instance.author = self.request.user

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Destination(models.Model) :
     name = models.CharField(max_length=100, blank=True, null=True)
@@ -9,6 +10,11 @@ class Destination(models.Model) :
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('post-detail',args=[self.pk] ) #kwargs={'pk': self.pk} used with CBVs
+        
+
 
 
     
