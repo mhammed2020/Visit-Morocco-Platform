@@ -15,7 +15,8 @@
                     <img src="{{item.img.url}}" alt="Image" class="img-fluid">                            
                 </div>
                 <span class="position-absolute tm-new-badge">New</span>
-                <h2 class="tm-pt-30 tm-color-primary tm-post-title">{{item.name}}</h2>
+                <h2><a class="tm-pt-30 tm-color-primary tm-post-title" href="{% url 'post-detail' item.id %}">{{ item.name }}</a></h2>
+
             </a>                    
             <p class="tm-pt-30">
                 {{item.desc|safe|truncatewords_html:40}}
