@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 class Destination(models.Model) :
     name = models.CharField(max_length=100, blank=True, null=True)
@@ -7,6 +8,8 @@ class Destination(models.Model) :
     desc = models.TextField()
     price = models.IntegerField()
     offer = models.BooleanField(default=False)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.name

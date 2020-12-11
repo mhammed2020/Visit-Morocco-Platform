@@ -5,17 +5,11 @@
     <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
     <div class="media-body">
       <div class="article-metadata">
-        <a class="mr-2" href="#">{{ post.author }}</a>
-        <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
-        {% if post.author == user %}
-          <div>
-            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' post.pk %}">Update</a>
-            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' post.pk %}">Delete</a>
-          </div>
-        {% endif %}
+        <a class="mr-2" href="#">{{ destination.author }}</a>
+      
       </div>
-      <h2 class="article-title">{{ post.title }}</h2>
-      <p class="article-content">{{ post.content }}</p>
+      <h2 class="article-title">{{ destination.title }}</h2>
+      <p class="article-content">{{ destination.content }}</p>
     </div>
   </article>
 
