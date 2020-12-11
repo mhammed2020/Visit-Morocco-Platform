@@ -6,16 +6,16 @@ from django.views.generic import (
 )
 from . models import Destination
 # Create your views here.
-def home(request) :
+# def home(request) :
     
-    destinations = Destination.objects.all()
+#     destinations = Destination.objects.all()
 
 
-    context = {
-        'destinations' :destinations
-    }
+#     context = {
+#         'destinations' :destinations
+#     }
 
-    return render(request,'accounts/home.html', context)
+#     return render(request,'accounts/home.html', context)
 
 class DestinationListView(ListView):
     model = Destination
