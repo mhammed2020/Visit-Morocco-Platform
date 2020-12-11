@@ -49,10 +49,15 @@ https://templatemo.com/tm-553-xtra-blog
 
 
                      <!-- Navbar Right Side -->
-            <div class="navbar-nav">
-                  <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                     <li class="tm-nav-item"><a href="{% url 'register' %}" class="tm-nav-link">
+                        <i class="fas fa-users"></i>
+                        Register
+                    </a></li>
                 
-                  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                    <li class="tm-nav-item"><a href="{% url 'profile' %}" class="tm-nav-link">
+                        <i class="fas fa-user"></i>
+                        Profile
+                    </a></li>
                
               </div>
 
