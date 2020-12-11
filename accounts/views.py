@@ -22,7 +22,7 @@ class DestinationListView(ListView):
     model = Destination
     template_name = 'accounts/home.html'  
     context_object_name = 'destinations'
-    paginate_by = 2
+    paginate_by = 4
 
 class DestinationCreateView(CreateView):
     model = Destination
