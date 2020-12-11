@@ -2,9 +2,12 @@
 {% load crispy_forms_tags %}
 {% block content %}
   <article class="media content-section">
+    {% if post.author.profile.image %}
     <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+    {%else%}
+    <img class="rounded-circle article-img" src="">
 
-   
+    {% endif %}
     <div class="media-body">
       <div class="article-metadata">
         <small class="text-muted">Posted By , </small>
@@ -13,7 +16,16 @@
       </div>
       <h2 class="article-title mb-4">{{ post.name }}</h2>
       <div class="tm-post-link-inner">
+       
+
+        {% if post.img %}
         <img src="{{post.img.url}}" alt="Image" class="img-fluid ">                            
+        {%else%}
+        <img src="" alt="Image" class="img-fluid ">                            
+
+        {% endif %}
+
+
     </div>
       <p class="article-content mt-4">{{ post.desc }}</p>
     </div>

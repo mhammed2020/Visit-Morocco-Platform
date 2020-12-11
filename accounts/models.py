@@ -12,7 +12,7 @@ class Destination(models.Model) :
 
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
     def get_absolute_url(self):
         return reverse('post-detail',args=[self.pk] ) #kwargs={'pk': self.pk} used with CBVs
