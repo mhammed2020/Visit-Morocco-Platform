@@ -27,6 +27,9 @@ urlpatterns = [
 
 
     path('profile/', user_views.profile, name='profile'),
+# CBVs
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
+
 
 
 ]
