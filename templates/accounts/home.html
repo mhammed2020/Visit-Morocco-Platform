@@ -56,7 +56,7 @@
 
     </div>   
  
-    <!-- {% if is_paginated %} Pagination with cbv
+    <!-- {% if is_paginated %} 
 
       {% if page_obj.has_previous %}
         <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
@@ -76,20 +76,20 @@
         <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
       {% endif %}
 
-    {% endif %}
+    {% endif %}--> 
 
-    {% endblock  %} --> 
+    
 
     {% if destinations.has_other_pages %}
     <div class="row">
         <div class="col-lg-12">
             <div class="pagination_wrap">
                 <ul>
-                    {% if jobs.has_previous %}
+                    {% if destinations.has_previous %}
                     <li><a href="?page={{destinations.previous_page_number}}"> <i class="ti-angle-left"></i> </a></li>
                     {% endif %}
 
-                    {% for i in jobs.paginator.page_range %}
+                    {% for i in destinations.paginator.page_range %}
                     <li><a href="?page={{i}}"><span>{{i}}</span></a></li>
                     {% endfor %}
 
@@ -104,5 +104,4 @@
     {% endif %}
 
 
-
-<
+    {% endblock  %} 
