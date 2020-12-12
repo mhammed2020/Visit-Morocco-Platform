@@ -11,17 +11,19 @@ from . models import Destination
 from . forms import DestinationForm
 from django.views.generic.edit import FormView
 # Create your views here.
-# def home(request) :
+# function based view 
+'''
+def home(request) :
     
-#     destinations = Destination.objects.all()
+    destinations = Destination.objects.all()
 
 
-#     context = {
-#         'destinations' :destinations
-#     }
+    context = {
+        'destinations' :destinations
+    }
 
-#     return render(request,'accounts/home.html', context)
-
+    return render(request,'accounts/home.html', context)
+'''
 class DestinationListView(ListView):
     model = Destination
     template_name = 'accounts/home.html'  
