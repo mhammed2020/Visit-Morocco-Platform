@@ -11,6 +11,7 @@ from . models import Destination
 from . forms import DestinationForm
 
 from .filters import DestinationFilter
+from django.core.paginator import Paginator
 
 # Create your views here.
 # function based view 
@@ -22,13 +23,20 @@ def home(request) :
     myfilter = DestinationFilter(request.GET, queryset=destinations)
     destinations = myfilter.qs
 
+    
+    paginator = Paginator(destinations, 4)  # Show 25 contacts per page.
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
 
     context = {
-        'destinations' :destinations,
+        'destinations' :page_obj,
          'myfilter': myfilter
     }
 
     return render(request,'accounts/home.html', context)
+
+
 
 
 
@@ -38,10 +46,10 @@ class DestinationListView(ListView):
     context_object_name = 'destinations'
     paginate_by = 4
 
-    def get_queryset(self):
-        qs = self.model.objects.all()
-        myfilter = DestinationFilter(self.request.GET, queryset=qs)
-        return myfilter.qs
+    # def get_queryset(self):
+    #     qs = self.model.objects.all()
+    #     myfilter = DestinationFilter(self.request.GET, queryset=qs)
+    #     return myfilter.qs
      
 
 
