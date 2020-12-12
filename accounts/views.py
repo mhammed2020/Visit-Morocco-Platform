@@ -30,7 +30,7 @@ def home(request) :
 
 
     context = {
-        'destinations' :page_obj,
+        'page_obj' :page_obj,
          'myfilter': myfilter
     }
 

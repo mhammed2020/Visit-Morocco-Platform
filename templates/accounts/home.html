@@ -56,7 +56,7 @@
 
     </div>   
  
-    <!-- {% if is_paginated %} 
+    {% if is_paginated %} 
 
       {% if page_obj.has_previous %}
         <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
@@ -76,7 +76,7 @@
         <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
       {% endif %}
 
-    {% endif %}--> 
+    {% endif %} 
 
     
 
@@ -87,6 +87,7 @@
                 <ul>
                     {% if destinations.has_previous %}
                     <li><a href="?page={{destinations.previous_page_number}}"> <i class="ti-angle-left"></i> </a></li>
+                    
                     {% endif %}
 
                     {% for i in destinations.paginator.page_range %}
