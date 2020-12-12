@@ -34,10 +34,7 @@ https://templatemo.com/tm-553-xtra-blog
                         <i class="fas fa-home"></i>
                         Blog Home
                     </a></li>
-                    <li class="tm-nav-item"><a href="post.html" class="tm-nav-link">
-                        <i class="fas fa-pen"></i>
-                        Single Post
-                    </a></li>
+                   
                     <li class="tm-nav-item"><a href="about.html" class="tm-nav-link">
                         <i class="fas fa-users"></i>
                         About Xtra
@@ -47,35 +44,44 @@ https://templatemo.com/tm-553-xtra-blog
                         Contact Us
                     </a></li>
 
-
-                     <!-- Navbar Right Side -->
-                     <li class="tm-nav-item"><a href="{% url 'register' %}" class="tm-nav-link">
-                        <i class="fas fa-users"></i>
-                        Register
-                    </a></li>
-                
-                    <li class="tm-nav-item"><a href="{% url 'login' %}" class="tm-nav-link">
-                        <i class="fa fa-sign-in" aria-hidden="true"></i>
-
-                        Login
+                    {% if user.is_authenticated %}
+                    <li class="tm-nav-item"><a href="{% url 'post-create' %}" class="tm-nav-link">
+                        <i class="fas fa-pen"></i>
+                        New Destination
                     </a></li>
                     <li class="tm-nav-item"><a href="{% url 'profile' %}" class="tm-nav-link">
                         <i class="fas fa-user"></i>
                         Profile
                     </a></li>
 
+                    
                     <li class="tm-nav-item"><a href="{% url 'logout' %}" class="tm-nav-link">
                         <i class="fas fa-sign-out-alt"></i>
                         Logout
                     </a></li>
 
+                    {% else %}
 
+                    <li class="tm-nav-item"><a href="{% url 'register' %}" class="tm-nav-link">
+                        <i class="fas fa-users"></i>
+                        Register
+                    </a></li>
+                
+                    <li class="tm-nav-item"><a href="{% url 'login' %}" class="tm-nav-link">
+                        <i class="fas fa-sign-in-alt"></i>
 
-                    <li class="tm-nav-item"><a href="{% url 'post-create' %}" class="tm-nav-link">
-                        <i class="fas fa-user"></i>
-                        New Destination
+                        Login
                     </a></li>
 
+                    {% endif %}
+
+                    
+                   
+
+
+
+
+                    
 
                
               </div>
