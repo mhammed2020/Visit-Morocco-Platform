@@ -33,5 +33,11 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'), #logout
 
 
+#reset email with django
+
+path('password-reset/',auth_views.PasswordResetView.as_view(template_name='users/password_reset.html'),
+    name='password_reset'),
+
+    
 ]
 urlpatterns = urlpatterns + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
