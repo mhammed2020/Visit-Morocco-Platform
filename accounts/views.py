@@ -31,10 +31,12 @@ class DestinationCreateView(CreateView):
     model = Destination
     form_class = DestinationForm 
     #fields = ['name','img','desc','price']
+    template_name = 'destination_form.html'
 
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
+    # def form_valid(self, form):
+    #     form.instance.author = self.request.user
+    #     form.instance.author = self.request.user
+    #     return super().form_valid(form)
 
 def post_detail(request,post_id) :
     
