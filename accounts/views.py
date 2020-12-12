@@ -9,21 +9,29 @@ from django.views.generic import (
 )
 from . models import Destination
 from . forms import DestinationForm
-from django.views.generic.edit import FormView
+
+from .filters import DestinationFilter
+
 # Create your views here.
 # function based view 
-'''
+
 def home(request) :
     
     destinations = Destination.objects.all()
 
+    myfilter = DestinationFilter(request.GET, queryset=destinations)
+    destinations = myfilter.qs
+
 
     context = {
-        'destinations' :destinations
+        'destinations' :destinations,
+         'myfilter': myfilter
     }
 
     return render(request,'accounts/home.html', context)
-'''
+
+
+
 class DestinationListView(ListView):
     model = Destination
     template_name = 'accounts/home.html'  
@@ -54,6 +62,8 @@ def post_detail(request,post_id) :
 
    
     return render(request,'accounts/post_detail.html', context)
+
+
 
 class DestinationUpdateView(UpdateView):
     model = Destination
