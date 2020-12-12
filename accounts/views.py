@@ -62,7 +62,7 @@ class DestinationUpdateView(UpdateView):
         return False
 
 
-class PostDeleteView(DeleteView):
+class DestinationDeleteView(DeleteView):
     model = Destination
     success_url = '/'
 
