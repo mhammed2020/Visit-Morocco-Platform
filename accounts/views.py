@@ -32,7 +32,7 @@ class DestinationCreateView(FormView):
     model = Destination
     form_class = DestinationForm 
     #fields = ['name','img','desc','price']
-    template_name = 'destination_form.html'
+    template_name = 'accounts/destination_form.html'
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
