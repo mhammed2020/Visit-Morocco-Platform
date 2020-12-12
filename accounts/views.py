@@ -14,7 +14,7 @@ from .filters import DestinationFilter
 
 # Create your views here.
 # function based view 
-
+'''
 def home(request) :
     
     destinations = Destination.objects.all()
@@ -30,13 +30,19 @@ def home(request) :
 
     return render(request,'accounts/home.html', context)
 
-
+'''
 
 class DestinationListView(ListView):
     model = Destination
     template_name = 'accounts/home.html'  
     context_object_name = 'destinations'
     paginate_by = 4
+
+    def get_queryset(self):
+        qs = self.model.objects.all()
+        myfilter = DestinationFilter(self.request.GET, queryset=qs)
+        return myfilter.qs
+
 
 class DestinationCreateView(CreateView):
     model = Destination
