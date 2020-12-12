@@ -3,6 +3,7 @@ from django.shortcuts import render,get_object_or_404
 from django.views.generic import (
     ListView,
     CreateView,
+    UpdateView,
   
 )
 from . models import Destination
@@ -44,3 +45,17 @@ def post_detail(request,post_id) :
 
    
     return render(request,'accounts/post_detail.html', context)
+
+class DestinationUpdateView(UpdateView):
+    model = Destination
+    fields = ['name','img','desc','price']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
