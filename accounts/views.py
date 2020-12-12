@@ -8,6 +8,7 @@ from django.views.generic import (
   
 )
 from . models import Destination
+from . forms import DestinationForm
 # Create your views here.
 # def home(request) :
     
@@ -29,7 +30,7 @@ class DestinationListView(ListView):
 class DestinationCreateView(CreateView):
     model = Destination
     form_class = DestinationForm 
-    fields = ['name','img','desc','price']
+    #fields = ['name','img','desc','price']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
