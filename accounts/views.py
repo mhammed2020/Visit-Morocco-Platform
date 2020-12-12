@@ -43,6 +43,16 @@ class DestinationListView(ListView):
         myfilter = DestinationFilter(self.request.GET, queryset=qs)
         return myfilter.qs
      
+from django_filters.views import FilterView
+
+
+class SearchResultsListView(FilterView):
+    model = Destination
+    context_object_name = 'destinations'
+    template_name = 'accounts/home.html'  
+    filterset_class = DestinationFilter # ADD YOUR filterset class
+
+
 
 
 class DestinationCreateView(CreateView):
