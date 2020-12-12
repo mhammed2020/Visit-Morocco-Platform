@@ -9,6 +9,7 @@ from django.views.generic import (
 )
 from . models import Destination
 from . forms import DestinationForm
+from django.views.generic.edit import FormView
 # Create your views here.
 # def home(request) :
     
@@ -27,7 +28,7 @@ class DestinationListView(ListView):
     context_object_name = 'destinations'
     paginate_by = 4
 
-class DestinationCreateView(CreateView):
+class DestinationCreateView(FormView):
     model = Destination
     form_class = DestinationForm 
     #fields = ['name','img','desc','price']
@@ -35,6 +36,7 @@ class DestinationCreateView(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
 
 def post_detail(request,post_id) :
     
