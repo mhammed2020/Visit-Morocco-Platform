@@ -14,6 +14,11 @@
         <a class="mr-2" href="#">{{ post.author }}</a>
 
       </div>
+      {% if post.author == user %}
+      <div>
+        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' post.pk %}">Update</a>
+      </div>
+    {% endif %}
       <h2 class="article-title mb-4">{{ post.name }}</h2>
       <div class="tm-post-link-inner">
        
