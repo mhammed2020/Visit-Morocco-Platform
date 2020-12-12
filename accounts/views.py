@@ -79,3 +79,8 @@ class DestinationDeleteView(DeleteView):
         if self.request.user == post.author:
             return True
         return False
+
+
+
+def about(request):
+    return render(request, 'accounts/about.html', {'title': 'About'})
