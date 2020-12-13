@@ -21,7 +21,6 @@ from users import views as user_views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('accounts.urls')),
     path('register/', user_views.register, name='register'),
 
@@ -64,6 +63,8 @@ path('password-reset-confirm/<uidb64>/<token>/',
          # change password 
 path('password_change/',auth_views.PasswordChangeView.as_view(),name='password_change'),
 path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
+
+    path('admin/', admin.site.urls),
 
 
 ]
