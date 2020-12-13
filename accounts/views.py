@@ -22,8 +22,8 @@ def home(request) :
     paginator = Paginator(destinations,4)
     page = request.GET.get('page')
 
-    # myfilter = DestinationFilter(request.GET, queryset=destinations)
-    # destinations = myfilter.qs
+    myfilter = DestinationFilter(request.GET, queryset=destinations)
+    myfilter = myfilter.qs
 
     try:
         destinations = paginator.page(page)
@@ -44,7 +44,7 @@ def home(request) :
 
     context = {
         'destinations' :destinations,
-        #  'myfilter': myfilter,
+        'myfilter': myfilter,
          'page':page
     }
 
