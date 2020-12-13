@@ -11,7 +11,7 @@ from . models import Destination
 from . forms import DestinationForm
 
 from .filters import DestinationFilter
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 # Create your views here.
 # function based view 
@@ -19,6 +19,15 @@ from django.core.paginator import Paginator
 def home(request) :
     
     destinations = Destination.objects.all()
+    paginator = Paginator(destinations,4)
+    page = request.GET.get('page')
+
+    try:
+        destinations = paginator.page(page)
+    except PageNotAnInteger:
+        destinations = paginator.page(1)
+    except EmptyPage:
+        destinations = paginator.page(paginator.num_page)
 
     myfilter = DestinationFilter(request.GET, queryset=destinations)
     destinations = myfilter.qs
@@ -31,10 +40,13 @@ def home(request) :
 
     context = {
         'page_obj' :page_obj,
-         'myfilter': myfilter
+         'myfilter': myfilter,
+         'page':page
     }
 
     return render(request,'accounts/home.html', context)
+
+
 
 
 
