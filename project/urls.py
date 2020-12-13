@@ -22,6 +22,10 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', include('accounts.urls')),
+
+    path('contact-us/', include('contact.urls')),
+
+
     path('register/', user_views.register, name='register'),
 
 
