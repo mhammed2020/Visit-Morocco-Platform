@@ -21,17 +21,20 @@ def home(request) :
     destinations = Destination.objects.all()
     paginator = Paginator(destinations,4)
     page = request.GET.get('page')
-    
+
+    # myfilter = DestinationFilter(request.GET, queryset=destinations)
+    # destinations = myfilter.qs
+
     try:
         destinations = paginator.page(page)
+
        
     except PageNotAnInteger:
         destinations = paginator.page(1)
     except EmptyPage:
         destinations = paginator.page(paginator.num_page)
 
-    # myfilter = DestinationFilter(request.GET, queryset=destinations)
-    # destinations = myfilter.qs
+    
 
     
     # paginator = Paginator(destinations, 4)  # Show 25 contacts per page.
