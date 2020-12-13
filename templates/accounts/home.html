@@ -56,7 +56,9 @@
 
     </div>   
  
-    {% if is_paginated %} 
+    {% include "accounts/pagination.html" with page=posts %}
+
+    <!-- {% if is_paginated %} 
 
       {% if page_obj.has_previous %}
         <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
@@ -76,10 +78,10 @@
         <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
       {% endif %}
 
-    {% endif %} 
+    {% endif %}  -->
 
     
-    {% if page_obj.has_other_pages %}
+    <!-- {% if page_obj.has_other_pages %}
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="pagination_wrap">
@@ -100,7 +102,7 @@
                             </div>
                         </div>
                     </div>
-                    {% endif %}
+                    {% endif %} -->
 
 
 
