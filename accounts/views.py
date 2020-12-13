@@ -24,7 +24,7 @@ def home(request) :
     destinations = myfilter.qs
 
     
-    paginator = Paginator(destinations, 2)  # Show 25 contacts per page.
+    paginator = Paginator(destinations, 4)  # Show 25 contacts per page.
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
