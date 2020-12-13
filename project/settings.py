@@ -34,7 +34,7 @@ INSTALLED_APPS = [
 
   'accounts.apps.AccountsConfig',
         'users.apps.UsersConfig',
-        'contact'
+        'contact',
     'crispy_forms',
      'django_filters',
      "bootstrap4",
