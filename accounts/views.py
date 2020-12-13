@@ -104,7 +104,7 @@ def post_detail(request,post_id) :
 
 
 
-class DestinationUpdateView(UpdateView):
+class DestinationUpdateView(LoginRequiredMixin, UserPassesTestMixin,UpdateView):
     model = Destination
     fields = ['name','img','desc','price']
 
