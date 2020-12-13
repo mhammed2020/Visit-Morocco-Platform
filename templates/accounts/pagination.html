@@ -5,7 +5,7 @@
     <a class="btn btn-secondary bg-secondary disabled" href="#">Next</a>
     {% endif %}
 
-    <span class="pr-4 pl-4">صفحة {{page.number}} من {{page.paginator.num_pages}}</span>
+    <span class="pr-4 pl-4">page {{page.number}} from {{page.paginator.num_pages}}</span>
 
     {% if page.has_previous %}
     <a class="btn btn-secondary bg-secondary" href="?page={{page.previous_page_number}}">previous</a>
