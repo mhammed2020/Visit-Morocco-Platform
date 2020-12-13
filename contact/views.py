@@ -20,3 +20,10 @@ def sendMessage(request):
             settings.EMAIL_HOST_USER,
             [email],
         )
+
+
+
+
+
+
+    return render(request,'contact/contact.html',{'myinfo':myinfo})
