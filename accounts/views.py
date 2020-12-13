@@ -29,18 +29,18 @@ def home(request) :
     except EmptyPage:
         destinations = paginator.page(paginator.num_page)
 
-    myfilter = DestinationFilter(request.GET, queryset=destinations)
-    destinations = myfilter.qs
+    # myfilter = DestinationFilter(request.GET, queryset=destinations)
+    # destinations = myfilter.qs
 
     
-    paginator = Paginator(destinations, 4)  # Show 25 contacts per page.
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
+    # paginator = Paginator(destinations, 4)  # Show 25 contacts per page.
+    # page_number = request.GET.get('page')
+    # page_obj = paginator.get_page(page_number)
 
 
     context = {
-        'page_obj' :page_obj,
-         'myfilter': myfilter,
+        'destinations' :destinations,
+        #  'myfilter': myfilter,
          'page':page
     }
 
