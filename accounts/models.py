@@ -21,6 +21,10 @@ class Destination(models.Model) :
         return reverse('post-detail',args=[self.pk] ) #kwargs={'pk': self.pk} used with CBVs
 
 
+    class Meta :
+        ordering = ('-date_posted',)
+
+
         
 
 
