@@ -19,14 +19,18 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 def home(request) :
     
     destinations = Destination.objects.all()
+   
+
+    myfilter = DestinationFilter(request.GET, queryset=destinations)
+    destinations = myfilter.qs
+
     paginator = Paginator(destinations,4)
     page = request.GET.get('page')
 
-    myfilter = DestinationFilter(request.GET, queryset=destinations)
-    myfilter = myfilter.qs
-
     try:
+  
         destinations = paginator.page(page)
+        
 
        
     except PageNotAnInteger:
