@@ -7,4 +7,4 @@ class DestinationFilter(django_filters.FilterSet):
     class Meta:
         model = Destination
         fields = '__all__'
-        exclude = ['img','price','offer','author']
+        exclude = ['img','price','offer','author','date_posted']
