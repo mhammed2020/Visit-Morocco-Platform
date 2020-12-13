@@ -21,17 +21,17 @@ def home(request) :
     destinations = Destination.objects.all()
     paginator = Paginator(destinations,4)
     page = request.GET.get('page')
-    myfilter = DestinationFilter(request.GET, queryset=destinations)
-    destinations = myfilter.qs
+    
     try:
-        pagee = paginator.page(page)
+        destinations = paginator.page(page)
        
     except PageNotAnInteger:
-        pagee = paginator.page(1)
+        destinations = paginator.page(1)
     except EmptyPage:
-        pagee = paginator.page(paginator.num_page)
+        destinations = paginator.page(paginator.num_page)
 
-    
+    # myfilter = DestinationFilter(request.GET, queryset=destinations)
+    # destinations = myfilter.qs
 
     
     # paginator = Paginator(destinations, 4)  # Show 25 contacts per page.
@@ -41,8 +41,8 @@ def home(request) :
 
     context = {
         'destinations' :destinations,
-         'myfilter': myfilter,
-         'page':pagee
+        #  'myfilter': myfilter,
+         'page':page
     }
 
     return render(request,'accounts/home.html', context)
