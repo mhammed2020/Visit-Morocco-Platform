@@ -77,7 +77,7 @@ class DestinationListView(ListView):
 
 
 
-class DestinationCreateView(CreateView):
+class DestinationCreateView(LoginRequiredMixin,CreateView):
     model = Destination
     # form_class = DestinationForm 
     fields = ['name','img','desc','price']
