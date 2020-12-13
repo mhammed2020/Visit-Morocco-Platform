@@ -59,5 +59,12 @@ path('password-reset-confirm/<uidb64>/<token>/',
          name='password_reset_complete'),
 
 
+
+
+         # change password 
+path('password_change/',auth_views.PasswordChangeView.as_view(),name='password_change'),
+# path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
+
+
 ]
 urlpatterns = urlpatterns + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
