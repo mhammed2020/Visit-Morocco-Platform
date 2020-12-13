@@ -21,11 +21,12 @@ def home(request) :
     destinations = Destination.objects.all()
     paginator = Paginator(destinations,4)
     page = request.GET.get('page')
-
+    myfilter = None
+    myfilter = DestinationFilter(request.GET, queryset=destinations)
+    destinations = myfilter.qs
     try:
         destinations = paginator.page(page)
-        myfilter = DestinationFilter(request.GET, queryset=destinations)
-        destinations = myfilter.qs
+       
     except PageNotAnInteger:
         destinations = paginator.page(1)
     except EmptyPage:
