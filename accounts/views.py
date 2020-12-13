@@ -21,16 +21,15 @@ def home(request) :
     destinations = Destination.objects.all()
     paginator = Paginator(destinations,4)
     page = request.GET.get('page')
-    myfilter = None
     myfilter = DestinationFilter(request.GET, queryset=destinations)
     destinations = myfilter.qs
     try:
-        destinations = paginator.page(page)
+        pagee = paginator.page(page)
        
     except PageNotAnInteger:
-        destinations = paginator.page(1)
+        pagee = paginator.page(1)
     except EmptyPage:
-        destinations = paginator.page(paginator.num_page)
+        pagee = paginator.page(paginator.num_page)
 
     
 
@@ -43,7 +42,7 @@ def home(request) :
     context = {
         'destinations' :destinations,
          'myfilter': myfilter,
-         'page':page
+         'page':pagee
     }
 
     return render(request,'accounts/home.html', context)
