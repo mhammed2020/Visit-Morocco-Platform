@@ -81,6 +81,8 @@ https://templatemo.com/tm-553-xtra-blog
 
 
 
+
+
                     
 
                
@@ -115,11 +117,32 @@ https://templatemo.com/tm-553-xtra-blog
         <main class="tm-main">
          
      
+            <main role="main" class="container">
+                <div class="row">
+                  <div class="col-md-8">
+                    {% if messages %}
+                      {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                          {{ message }}
+                        </div>
+                      {% endfor %}
+                    {% endif %}
+                    
+                    {% block content %}{% endblock %}
+                  
+          
+                  </div>
+          
+          
+                </div>
+              </main>
+
+<!-- 
             
-            {% block content %}
+             block content 
               
-            {% endblock  %}
-       
+             endblock  
+        -->
                    
             <footer class="row tm-row">
                 <hr class="col-12">
