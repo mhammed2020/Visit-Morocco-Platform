@@ -6,4 +6,17 @@ from . models import Info
 # Create your views here.
 def sendMessage(request):
 
-  pass
+    myinfo= Info.objects.first()
+
+    #fetch data from contact.html
+    if request.method == 'POST' :
+        subject = request.POST['subject']
+        email = request.POST['email']
+        message = request.POST['message']
+        # print(subject,email,message)
+        send_mail(
+            subject,
+            message,
+            settings.EMAIL_HOST_USER,
+            [email],
+        )
