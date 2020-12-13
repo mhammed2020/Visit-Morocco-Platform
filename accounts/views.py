@@ -23,7 +23,7 @@ def home(request) :
 
     myfilter = DestinationFilter(request.GET, queryset=destinations)
     destinations = myfilter.qs
-
+#  paginator must be after  django filter 
     paginator = Paginator(destinations,4)
     page = request.GET.get('page')
 
