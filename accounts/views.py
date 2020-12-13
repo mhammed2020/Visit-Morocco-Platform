@@ -24,13 +24,14 @@ def home(request) :
 
     try:
         destinations = paginator.page(page)
+        myfilter = DestinationFilter(request.GET, queryset=destinations)
+        destinations = myfilter.qs
     except PageNotAnInteger:
         destinations = paginator.page(1)
     except EmptyPage:
         destinations = paginator.page(paginator.num_page)
 
-    myfilter = DestinationFilter(request.GET, queryset=destinations)
-    destinations = myfilter.qs
+    
 
     
     # paginator = Paginator(destinations, 4)  # Show 25 contacts per page.
