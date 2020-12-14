@@ -177,3 +177,8 @@ AUTHENTICATION_BACKENDS = [
 'social_core.backends.facebook.FacebookOAuth2',
 
 ]
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = '************ ' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '**********' # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
