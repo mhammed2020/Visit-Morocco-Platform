@@ -48,6 +48,13 @@ https://templatemo.com/tm-553-xtra-blog
                     </a></li>
 
                     {% if user.is_authenticated %}
+
+
+                    <li class="tm-nav-item"><a href="{% url 'post-create' %}" class="tm-nav-link">
+                        <i class="far fa-address-card"></i>
+                        My Dashboard
+                    </a></li>
+
                     <li class="tm-nav-item"><a href="{% url 'post-create' %}" class="tm-nav-link">
                         <i class="fas fa-pen"></i>
                         New Destination
