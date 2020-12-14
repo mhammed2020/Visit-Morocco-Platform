@@ -168,3 +168,13 @@ EMAIL_HOST_USER = 'addrees.0@gmail.com'
 EMAIL_HOST_PASSWORD = 'passwd'
 EMAIL_USE_TLS = True
 EMAIL_PORT = '587'
+
+
+
+AUTHENTICATION_BACKENDS = [
+'django.contrib.auth.backends.ModelBackend',
+'account.authentication.EmailAuthBackend',
+'social_core.backends.facebook.FacebookOAuth2',
+'social_core.backends.google.GoogleOAuth2',
+'social_core.backends.twitter.TwitterOAuth',
+]
