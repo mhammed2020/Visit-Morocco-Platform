@@ -21,9 +21,11 @@ from users import views as user_views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('', include('accounts.urls')),
+    path('', include('accounts.urls')), # accounts app
 
-    path('contact-us/', include('contact.urls')),
+    path('contact-us/', include('contact.urls')), # contact app
+
+    path('social-auth/',include('social_django.urls', namespace='social')), # social_django app
 
 
     path('register/', user_views.register, name='register'),
