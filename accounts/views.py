@@ -133,3 +133,10 @@ class DestinationDeleteView(DeleteView):
 
 def about(request):
     return render(request, 'accounts/about.html', {'title': 'About'})
+
+
+
+def dashboard(request):
+    
+
+    return render(request, 'accounts/dashboard.html', {'section': 'dashboard'})
