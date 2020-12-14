@@ -179,6 +179,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 
-SOCIAL_AUTH_FACEBOOK_KEY = '************ ' # Facebook App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '**********' # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_KEY = 'Facebook App ID' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'Facebook App Secre' # Facebook App Secret
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
