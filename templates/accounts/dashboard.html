@@ -1,10 +1,26 @@
 {% extends "base.html" %}
-{% block title %}Dashboard{% endblock %}
 {% block content %}
-<h1>Dashboard</h1>
 
 
-    {% with total_images_created=request.user.images_created.count %}
+
+<br>
+
+<div class="row">
+	
+	
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text text-white  mb-3" id="orders-pending">
+			  	<div class="card-header">
+                    <h1>Dashboard</h1>
+			  	</div>
+			  	<div class="card-body">
+			    	<h5 class="card-title"> 
+
+
+
+                        {% with total_images_created=request.user.images_created.count %}
 <p>Welcome to your dashboard. You have bookmarked
 {{ total_images_created }} image{{ total_images_created|pluralize }}.</p>
 {% endwith %}
@@ -14,5 +30,11 @@ images from other websites → <a href=""
 class="button">Bookmark it</a></p>
 
 
+                    </h5>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
 
     {% endblock %}
