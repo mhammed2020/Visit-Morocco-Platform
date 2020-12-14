@@ -20,7 +20,3 @@ def image_create(request):
 
 
 
-def dashboard(request):
-    
-
-    return render(request, 'images/image/dashboard.html', {'section': 'dashboard'})

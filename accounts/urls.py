@@ -13,9 +13,11 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('home/', views.home, name='home'),
     # path('', DestinationListView.as_view(), name='home'),
-path('', views.dashboard, name='dashboard'),
+
+
+    path('', views.dashboard, name='dashboard'),
 
   
     path('post/new/', DestinationCreateView.as_view(), name='post-create'),

@@ -136,7 +136,10 @@ def about(request):
 
 
 
+
 def dashboard(request):
     
 
     return render(request, 'accounts/dashboard.html', {'section': 'dashboard'})
+
+    

@@ -21,7 +21,7 @@ from users import views as user_views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('account', include('accounts.urls')), # accounts app
+    path('account/', include('accounts.urls')), # accounts app
 
     path('contact-us/', include('contact.urls')), # contact app
 
