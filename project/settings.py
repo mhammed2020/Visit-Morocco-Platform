@@ -174,5 +174,6 @@ EMAIL_PORT = '587'
 AUTHENTICATION_BACKENDS = [
 'django.contrib.auth.backends.ModelBackend',
 'users.authentication.EmailAuthBackend',
+'social_core.backends.facebook.FacebookOAuth2',
 
 ]
