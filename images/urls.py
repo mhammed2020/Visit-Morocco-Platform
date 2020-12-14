@@ -3,6 +3,6 @@ from . import views
 app_name = 'images'
 urlpatterns = [
 path('create/', views.image_create, name='create'),
-path('', views.dashboard, name='dashboard'),
+path('dashboard/', views.dashboard, name='dashboard'),
 
 ]
