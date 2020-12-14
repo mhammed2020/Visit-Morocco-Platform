@@ -1,11 +1,13 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
+
 {% block title %}Tourism is Morocco {% endblock %}
 {% block content %}
 <div class="container">
 <h1 >Share your experience with us </h1>
 <img src="{{ request.GET.url }}" class="image-preview">
 <form method="post">
-{{ form.as_p }}
+{{ form|crispy  }}
 {% csrf_token %}
 <input type="submit" value="Like and share!">
 </form>
