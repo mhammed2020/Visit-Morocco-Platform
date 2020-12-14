@@ -27,6 +27,7 @@ urlpatterns = [
 
     path('social-auth/',include('social_django.urls', namespace='social')), # social_django app
 
+    path('images/', include('images.urls', namespace='images')), # images  app
 
     path('register/', user_views.register, name='register'),
 
