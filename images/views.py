@@ -16,3 +16,11 @@ def image_create(request):
             
         form = ImageCreateForm(data=request.GET) # show Image form
     return render(request, 'images/image/create.html', {'section': 'images','form': form})
+
+
+
+
+def dashboard(request):
+    
+
+    return render(request, 'images/dashboard.html', {'section': 'dashboard'})
