@@ -175,6 +175,7 @@ AUTHENTICATION_BACKENDS = [
 'django.contrib.auth.backends.ModelBackend',
 'users.authentication.EmailAuthBackend',
 'social_core.backends.facebook.FacebookOAuth2',
+'social_core.backends.twitter.TwitterOAuth',
 
 ]
 
