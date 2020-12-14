@@ -184,3 +184,7 @@ AUTHENTICATION_BACKENDS = [
 SOCIAL_AUTH_FACEBOOK_KEY = 'Facebook App ID' # Facebook App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = 'Facebook App Secre' # Facebook App Secret
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'Google  Key' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Google  Secret' # Google Consumer Secret
