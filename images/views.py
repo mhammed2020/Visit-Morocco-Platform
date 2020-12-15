@@ -20,4 +20,9 @@ def image_create(request):
 
 
 
+def image_detail(request, id, slug):
+    pass
+
+
+
 
