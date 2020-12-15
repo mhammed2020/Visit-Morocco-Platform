@@ -26,7 +26,7 @@ def image_detail(request, id, slug):
     image = get_object_or_404(Image, id=id, slug=slug)
 
     messages.success(request, f'Your account has been created! You are now able to log in')
-            return redirect('login')
+            
     return render(request,'images/image/detail.html', {'section': 'images', 'image': image})
 
 
