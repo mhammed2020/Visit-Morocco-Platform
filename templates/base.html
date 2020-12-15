@@ -49,13 +49,47 @@ https://templatemo.com/tm-553-xtra-blog
 
                     {% if user.is_authenticated %}
 
-
+<!-- 
                     <li class="tm-nav-item"><a href="{% url 'dashboard' %}" class="tm-nav-link">
 
                         <i class="far fa-address-card"></i>
                         My Dashboard
-                    </a></li>
+                    </a></li> -->
 
+
+
+                    
+
+
+                      
+
+<li {% if section == "dashboard" %}class="selected"{% endif %}>
+<a class="tm-nav-link" href="{% url "dashboard" %}">
+    <i class="far fa-address-card"></i>
+    My dashboard</a>
+</li>
+
+
+<li {% if section == "images" %}class="selected"{% endif %}>
+<a class="tm-nav-link" href="#">
+    <i class="fas fa-image"></i>
+    Images</a>
+</li>
+
+<li {% if section == "people" %}class="selected"{% endif %}>
+
+    <a class="tm-nav-link" href="#">
+        <i class="fas fa-route"></i>
+            People</a>
+</li>
+
+
+
+                     
+
+
+
+                    
                     <li class="tm-nav-item"><a href="{% url 'post-create' %}" class="tm-nav-link">
                         <i class="fas fa-pen"></i>
                         New Destination
