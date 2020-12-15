@@ -39,6 +39,9 @@ INSTALLED_APPS = [
      'django_filters',
      "bootstrap4",
      'images.apps.ImagesConfig',
+
+'easy_thumbnails',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
