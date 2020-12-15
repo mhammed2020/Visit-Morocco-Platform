@@ -208,5 +208,18 @@ https://templatemo.com/tm-553-xtra-blog
     </div>
     <script src="{% static 'js/jquery.min.js'  %}"></script>
     <script src="{% static 'js/templatemo-script.js' %}"></script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/
+    jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        {% block domready %}
+        {% endblock %}
+        });
+        </script>
+
+
 </body>
 </html>
