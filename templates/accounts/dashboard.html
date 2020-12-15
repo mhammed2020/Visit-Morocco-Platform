@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
 {% block content %}
+
+
+    
 
 
 
@@ -14,21 +18,22 @@
 			<div class="card text text-white  mb-3" id="orders-pending">
 			  	<div class="card-header">
                     <h1>Dashboard</h1>
-			  	</div>
+                </div>
 			  	<div class="card-body">
-			    	<h5 class="card-title"> 
-
-
+			    	<h5 class="card-title">
 
                         {% with total_images_created=request.user.images_created.count %}
-<p>Welcome to your dashboard. You have bookmarked
-{{ total_images_created }} image{{ total_images_created|pluralize }}.</p>
-{% endwith %}
-<p>Drag the following button to your bookmarks toolbar to bookmark
-images from other websites → <a href="" 
+                        <p>Welcome to your dashboard. You have bookmarked
+                        
 
-class="button">Bookmark it</a></p>
+                        <span class="tm-color-primary"> {{ total_images_created }}  </span>
 
+                         image{{ total_images_created|pluralize }}.</p>
+                        {% endwith %}
+                        <p>Drag the following button to your bookmarks toolbar to bookmark
+                        images from other websites → <a href="" 
+                        
+                        class="btn btn-info btn-sm">Bookmark it</a></p>
 
                     </h5>
 			  	</div>
