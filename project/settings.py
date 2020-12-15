@@ -192,3 +192,11 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'Google  Key' # Google Consumer Key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Google  Secret' # Google Consumer Secret
+
+
+
+
+
+
+
+THUMBNAIL_DEBUG = True
