@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .forms import ImageCreateForm
 from django.shortcuts import get_object_or_404
 from .models import Image
+from django.contrib import messages
+
 def image_create(request):
     if request.method == 'POST': # form saved
     
@@ -22,6 +24,9 @@ def image_create(request):
 
 def image_detail(request, id, slug):
     image = get_object_or_404(Image, id=id, slug=slug)
+
+    messages.success(request, f'Your account has been created! You are now able to log in')
+            return redirect('login')
     return render(request,'images/image/detail.html', {'section': 'images', 'image': image})
 
 
