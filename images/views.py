@@ -5,6 +5,8 @@ from .models import Image
 from django.contrib import messages
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
+
 def image_create(request):
     if request.method == 'POST': # form saved
     
@@ -33,3 +35,7 @@ def image_detail(request, id, slug):
 
 
 
+@login_required
+@require_POST
+def image_like(request):
+    pass
