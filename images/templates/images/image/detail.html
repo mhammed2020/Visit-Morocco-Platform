@@ -9,7 +9,12 @@
 <img src="{% thumbnail image.image 300x0 %}" class="image-detail">
 </a>
 
-{% with total_likes=image.users_like.count %}
+<!-- {% with total_likes=image.users_like.count %} -->
+
+
+{% with total_likes=image.users_like.count users_like=image.users_
+    like.all %}
+
 <div class="image-info">
 <div>
 <span class="count">
