@@ -158,5 +158,6 @@ def user_list(request):
 
 
 def user_detail(request, username):
-    pass
+    user = get_object_or_404(User,username=username,is_active=True)
+    return render(request,'account/user/detail.html',{'section': 'people','user': user})
     
