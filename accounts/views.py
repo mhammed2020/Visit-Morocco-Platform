@@ -153,6 +153,7 @@ def dashboard(request):
     # tracking user 
 
 def user_list(request):
-    pass
+    users = User.objects.filter(is_active=True)
+    return render(request,'account/user/list.html',{'section': 'people','users': users})
 
     
