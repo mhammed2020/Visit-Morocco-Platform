@@ -157,7 +157,4 @@ def user_list(request):
     return render(request,'users/list.html',{'section': 'people','users': users})
 
 
-def user_detail(request, username):
-    user = get_object_or_404(User,username=username,is_active=True)
-    return render(request,'users/detail.html',{'section': 'people','user': user})
     
