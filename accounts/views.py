@@ -14,6 +14,8 @@ from . forms import DestinationForm
 from .filters import DestinationFilter
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
+from django.contrib.auth.models import User  # ----------------------------Tracking User
+
 # Create your views here.
 # function based view 
 
@@ -141,5 +143,16 @@ def dashboard(request):
     
 
     return render(request, 'accounts/dashboard.html', {'section': 'dashboard'})
+
+
+
+
+
+
+
+    # tracking user 
+
+def user_list(request):
+    pass
 
     
