@@ -9,7 +9,6 @@
 <img src="{% thumbnail image.image 300x0 %}" class="image-detail">
 </a>
 
-<!-- {% with total_likes=image.users_like.count %} -->
 
 
 {% with total_likes=image.users_like.count users_like=image.users_
@@ -39,7 +38,6 @@
 <div class="image-likes">
 
 
-<!-- {% for user in image.users_like.all %} -->
 {% for user in users_like %}
 <div>
 <img src="{{ user.profile.photo.url }}">
