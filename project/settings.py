@@ -200,3 +200,11 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Google  Secret' # Google Consumer Secret
 
 
 THUMBNAIL_DEBUG = True
+
+
+# tracking feature 
+from django.urls import reverse_lazy
+ABSOLUTE_URL_OVERRIDES = {
+'auth.user': lambda u: reverse_lazy('user_detail',
+args=[u.username])
+}
