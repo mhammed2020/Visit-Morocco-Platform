@@ -6,7 +6,7 @@
 <div id="people-list">
 {% for user in users %}
 <div class="user">
-<a href="{% url 'profile' %}">
+<a href="{{ user.get_absolute_url }}">
 
 
 <img  class="rounded-circle account-img" src="{{ user.profile.image.url }}">
@@ -14,7 +14,7 @@
 
 </a>
 <div class="info">
-<a href="{% url 'profile' %}" class="title">
+<a href="{{ user.get_absolute_url }}" class="title">
 {{ user.username }}
 
 </a>
