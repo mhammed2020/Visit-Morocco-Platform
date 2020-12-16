@@ -26,7 +26,13 @@ urlpatterns = [
     path('post/<int:pk>/delete/', DestinationDeleteView.as_view(), name='post-delete'),
 
 
-   path('about/', views.about, name='about')
+   path('about/', views.about, name='about'),
+
+
+   #tracking user feature
+
+   path('users/', views.user_list, name='user_list'),
+path('users/<username>/', views.user_detail, name='user_detail'),
 
 
 ]
